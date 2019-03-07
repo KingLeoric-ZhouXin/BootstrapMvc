@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc4af9e945424f8a8b03bfce7fc14de1" Name="Diagram1">
+        <EntityTypeShape EntityType="RoleManagementModel.Base_AppendProperty" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_AppendPropertyInstance" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_Button" Width="1.5" PointX="8.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_O_A_Setup" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_Organization" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_Recyclebin" Width="1.5" PointX="8.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_RoleRight" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_Roles" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_StaffOrganize" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_SysMenu" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserGroup" Width="1.5" PointX="3.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserGroupRight" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserInfo" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserInfoUserGroup" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserRight" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserRole" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_O_A_Setup_Base_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_StaffOrganize_Base_Organization" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_RoleRight_Base_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserRole_Base_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_StaffOrganize_Base_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserGroupRight_Base_UserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserInfoUserGroup_Base_UserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserInfoUserGroup_Base_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserRight_Base_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserRole_Base_UserInfo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

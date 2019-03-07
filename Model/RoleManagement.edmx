@@ -1,0 +1,1255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RoleManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Base_AppendProperty">
+          <Key>
+            <PropertyRef Name="Property_ID" />
+          </Key>
+          <Property Name="Property_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Property_Function" Type="varchar" MaxLength="50" />
+          <Property Name="Property_FunctionUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Property_Control_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Control_Type" Type="int" />
+          <Property Name="Property_Control_DataSource" Type="varchar(max)" />
+          <Property Name="Property_Control_Length" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Control_Maxlength" Type="int" />
+          <Property Name="Property_Control_Style" Type="varchar" MaxLength="50" />
+          <Property Name="Property_Control_Validator" Type="varchar" MaxLength="200" />
+          <Property Name="Property_Colspan" Type="int" />
+          <Property Name="Property_Event" Type="varchar" MaxLength="200" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_AppendPropertyInstance">
+          <Key>
+            <PropertyRef Name="PropertyInstance_ID" />
+          </Key>
+          <Property Name="PropertyInstance_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Property_Control_ID" Type="varchar" MaxLength="50" />
+          <Property Name="PropertyInstance_Value" Type="varchar(max)" />
+          <Property Name="PropertyInstance_Key" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_Button">
+          <Key>
+            <PropertyRef Name="Button_ID" />
+          </Key>
+          <Property Name="Button_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Button_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Button_Title" Type="varchar" MaxLength="50" />
+          <Property Name="Button_Img" Type="varchar" MaxLength="50" />
+          <Property Name="Button_Code" Type="varchar" MaxLength="200" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="Button_Type" Type="varchar" MaxLength="50" />
+          <Property Name="Button_Remak" Type="varchar" MaxLength="200" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_O_A_Setup">
+          <Key>
+            <PropertyRef Name="Setup_ID" />
+          </Key>
+          <Property Name="Setup_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Setup_IName" Type="varchar" MaxLength="50" />
+          <Property Name="NavigateUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Target" Type="varchar" MaxLength="50" />
+          <Property Name="Setup_Img" Type="varchar" MaxLength="50" />
+          <Property Name="Setup_Remak" Type="varchar" MaxLength="200" />
+          <Property Name="SortCode" Type="int" />
+        </EntityType>
+        <EntityType Name="Base_Organization">
+          <Key>
+            <PropertyRef Name="Organization_ID" />
+          </Key>
+          <Property Name="Organization_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Organization_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Organization_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Organization_InnerPhone" Type="varchar" MaxLength="20" />
+          <Property Name="Organization_OuterPhone" Type="varchar" MaxLength="20" />
+          <Property Name="Organization_Manager" Type="varchar" MaxLength="50" />
+          <Property Name="Organization_AssistantManager" Type="varchar" MaxLength="50" />
+          <Property Name="Organization_Fax" Type="varchar" MaxLength="20" />
+          <Property Name="Organization_Zipcode" Type="varchar" MaxLength="20" />
+          <Property Name="Organization_Address" Type="varchar" MaxLength="200" />
+          <Property Name="ParentId" Type="varchar" MaxLength="50" />
+          <Property Name="Organization_Remark" Type="varchar" MaxLength="200" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_Recyclebin">
+          <Key>
+            <PropertyRef Name="Recyclebin_ID" />
+          </Key>
+          <Property Name="Recyclebin_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Recyclebin_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Recyclebin_Database" Type="varchar" MaxLength="50" />
+          <Property Name="Recyclebin_Table" Type="varchar" MaxLength="50" />
+          <Property Name="Recyclebin_FieldKey" Type="varchar" MaxLength="50" />
+          <Property Name="Recyclebin_EventField" Type="varchar" MaxLength="50" />
+          <Property Name="Recyclebin_Remark" Type="varchar(max)" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_RoleRight">
+          <Key>
+            <PropertyRef Name="RoleRight_ID" />
+          </Key>
+          <Property Name="RoleRight_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Roles_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Id" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_Roles">
+          <Key>
+            <PropertyRef Name="Roles_ID" />
+          </Key>
+          <Property Name="Roles_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentId" Type="varchar" MaxLength="50" />
+          <Property Name="Roles_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Role_Restriction" Type="varchar" MaxLength="200" />
+          <Property Name="Roles_Remark" Type="varchar" MaxLength="200" />
+          <Property Name="AllowEdit" Type="int" />
+          <Property Name="AllowDelete" Type="int" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_StaffOrganize">
+          <Key>
+            <PropertyRef Name="StaffOrganize_Id" />
+          </Key>
+          <Property Name="StaffOrganize_Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Organization_ID" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“RM_DB.dbo.Base_SysLoginlog”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="Base_SysLoginlog">
+          <Property Name="SYS_LOGINLOG_ID" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_LOGINLOG_IP" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_LOGINLOG_TIME" Type="datetime" />
+          <Property Name="User_Account" Type="varchar" MaxLength="50" />
+          <Property Name="SYS_LOGINLOG_STATUS" Type="int" />
+          <Property Name="OWNER_address" Type="varchar" MaxLength="200" />
+        </EntityType>-->
+        <EntityType Name="Base_SysMenu">
+          <Key>
+            <PropertyRef Name="Menu_Id" />
+          </Key>
+          <Property Name="Menu_Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentId" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Title" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Img" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Type" Type="int" />
+          <Property Name="NavigateUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Target" Type="varchar" MaxLength="50" />
+          <Property Name="AllowEdit" Type="int" />
+          <Property Name="AllowDelete" Type="int" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroup_ID" />
+          </Key>
+          <Property Name="UserGroup_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentId" Type="varchar" MaxLength="50" />
+          <Property Name="UserGroup_Code" Type="varchar" MaxLength="50" />
+          <Property Name="UserGroup_Name" Type="varchar" MaxLength="50" />
+          <Property Name="UserGroup_Remark" Type="varchar" MaxLength="200" />
+          <Property Name="AllowEdit" Type="int" />
+          <Property Name="AllowDelete" Type="int" />
+          <Property Name="SortCode" Type="int" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_UserGroupRight">
+          <Key>
+            <PropertyRef Name="UserGroupRight_ID" />
+          </Key>
+          <Property Name="UserGroupRight_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserGroup_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Id" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_UserInfo">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Code" Type="varchar" MaxLength="50" />
+          <Property Name="User_Account" Type="varchar" MaxLength="50" />
+          <Property Name="User_Pwd" Type="varchar" MaxLength="50" />
+          <Property Name="User_Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_Sex" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Theme" Type="varchar" MaxLength="50" />
+          <Property Name="Question" Type="varchar" MaxLength="50" />
+          <Property Name="AnswerQuestion" Type="varchar" MaxLength="50" />
+          <Property Name="DeleteMark" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyUserId" Type="varchar" MaxLength="50" />
+          <Property Name="ModifyUserName" Type="varchar" MaxLength="50" />
+          <Property Name="User_Remark" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Base_UserInfoUserGroup">
+          <Key>
+            <PropertyRef Name="UserInfoUserGroup_ID" />
+          </Key>
+          <Property Name="UserInfoUserGroup_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="UserGroup_ID" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_UserRight">
+          <Key>
+            <PropertyRef Name="UserRight_ID" />
+          </Key>
+          <Property Name="UserRight_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Menu_Id" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Base_UserRole">
+          <Key>
+            <PropertyRef Name="UserRole_ID" />
+          </Key>
+          <Property Name="UserRole_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Roles_ID" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Base_O_A_Setup_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_O_A_Setup" Type="Self.Base_O_A_Setup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_O_A_Setup">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_RoleRight_Base_Roles">
+          <End Role="Base_Roles" Type="Self.Base_Roles" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_RoleRight" Type="Self.Base_RoleRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Roles">
+              <PropertyRef Name="Roles_ID" />
+            </Principal>
+            <Dependent Role="Base_RoleRight">
+              <PropertyRef Name="Roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_StaffOrganize_Base_Organization">
+          <End Role="Base_Organization" Type="Self.Base_Organization" Multiplicity="0..1" />
+          <End Role="Base_StaffOrganize" Type="Self.Base_StaffOrganize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Organization">
+              <PropertyRef Name="Organization_ID" />
+            </Principal>
+            <Dependent Role="Base_StaffOrganize">
+              <PropertyRef Name="Organization_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_StaffOrganize_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_StaffOrganize" Type="Self.Base_StaffOrganize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_StaffOrganize">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserGroupRight_Base_UserGroup">
+          <End Role="Base_UserGroup" Type="Self.Base_UserGroup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserGroupRight" Type="Self.Base_UserGroupRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Principal>
+            <Dependent Role="Base_UserGroupRight">
+              <PropertyRef Name="UserGroup_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserInfoUserGroup_Base_UserGroup">
+          <End Role="Base_UserGroup" Type="Self.Base_UserGroup" Multiplicity="0..1" />
+          <End Role="Base_UserInfoUserGroup" Type="Self.Base_UserInfoUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Principal>
+            <Dependent Role="Base_UserInfoUserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserInfoUserGroup_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserInfoUserGroup" Type="Self.Base_UserInfoUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserInfoUserGroup">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRight_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserRight" Type="Self.Base_UserRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRight">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRole_Base_Roles">
+          <End Role="Base_Roles" Type="Self.Base_Roles" Multiplicity="0..1" />
+          <End Role="Base_UserRole" Type="Self.Base_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Roles">
+              <PropertyRef Name="Roles_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRole">
+              <PropertyRef Name="Roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRole_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserRole" Type="Self.Base_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRole">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RoleManagementModelStoreContainer">
+          <EntitySet Name="Base_AppendProperty" EntityType="Self.Base_AppendProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_AppendPropertyInstance" EntityType="Self.Base_AppendPropertyInstance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_Button" EntityType="Self.Base_Button" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_O_A_Setup" EntityType="Self.Base_O_A_Setup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_Organization" EntityType="Self.Base_Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_Recyclebin" EntityType="Self.Base_Recyclebin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_RoleRight" EntityType="Self.Base_RoleRight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_Roles" EntityType="Self.Base_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_StaffOrganize" EntityType="Self.Base_StaffOrganize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_SysMenu" EntityType="Self.Base_SysMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserGroup" EntityType="Self.Base_UserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserGroupRight" EntityType="Self.Base_UserGroupRight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserInfo" EntityType="Self.Base_UserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserInfoUserGroup" EntityType="Self.Base_UserInfoUserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserRight" EntityType="Self.Base_UserRight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Base_UserRole" EntityType="Self.Base_UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Base_O_A_Setup_Base_UserInfo" Association="Self.FK_Base_O_A_Setup_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_O_A_Setup" EntitySet="Base_O_A_Setup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_RoleRight_Base_Roles" Association="Self.FK_Base_RoleRight_Base_Roles">
+            <End Role="Base_Roles" EntitySet="Base_Roles" />
+            <End Role="Base_RoleRight" EntitySet="Base_RoleRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_StaffOrganize_Base_Organization" Association="Self.FK_Base_StaffOrganize_Base_Organization">
+            <End Role="Base_Organization" EntitySet="Base_Organization" />
+            <End Role="Base_StaffOrganize" EntitySet="Base_StaffOrganize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_StaffOrganize_Base_UserInfo" Association="Self.FK_Base_StaffOrganize_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_StaffOrganize" EntitySet="Base_StaffOrganize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserGroupRight_Base_UserGroup" Association="Self.FK_Base_UserGroupRight_Base_UserGroup">
+            <End Role="Base_UserGroup" EntitySet="Base_UserGroup" />
+            <End Role="Base_UserGroupRight" EntitySet="Base_UserGroupRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserInfoUserGroup_Base_UserGroup" Association="Self.FK_Base_UserInfoUserGroup_Base_UserGroup">
+            <End Role="Base_UserGroup" EntitySet="Base_UserGroup" />
+            <End Role="Base_UserInfoUserGroup" EntitySet="Base_UserInfoUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserInfoUserGroup_Base_UserInfo" Association="Self.FK_Base_UserInfoUserGroup_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserInfoUserGroup" EntitySet="Base_UserInfoUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRight_Base_UserInfo" Association="Self.FK_Base_UserRight_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserRight" EntitySet="Base_UserRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRole_Base_Roles" Association="Self.FK_Base_UserRole_Base_Roles">
+            <End Role="Base_Roles" EntitySet="Base_Roles" />
+            <End Role="Base_UserRole" EntitySet="Base_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRole_Base_UserInfo" Association="Self.FK_Base_UserRole_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserRole" EntitySet="Base_UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RoleManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Base_AppendProperty">
+          <Key>
+            <PropertyRef Name="Property_ID" />
+          </Key>
+          <Property Name="Property_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Property_Function" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_FunctionUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Control_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Control_Type" Type="Int32" />
+          <Property Name="Property_Control_DataSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Control_Length" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Control_Maxlength" Type="Int32" />
+          <Property Name="Property_Control_Style" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Control_Validator" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Colspan" Type="Int32" />
+          <Property Name="Property_Event" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Base_AppendPropertyInstance">
+          <Key>
+            <PropertyRef Name="PropertyInstance_ID" />
+          </Key>
+          <Property Name="PropertyInstance_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Property_Control_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyInstance_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyInstance_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Base_Button">
+          <Key>
+            <PropertyRef Name="Button_ID" />
+          </Key>
+          <Property Name="Button_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Button_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Button_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Button_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Button_Code" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="Button_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Button_Remak" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Base_O_A_Setup">
+          <Key>
+            <PropertyRef Name="Setup_ID" />
+          </Key>
+          <Property Name="Setup_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Setup_IName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavigateUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Target" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Setup_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Setup_Remak" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SortCode" Type="Int32" />
+          <NavigationProperty Name="Base_UserInfo" Relationship="Self.FK_Base_O_A_Setup_Base_UserInfo" FromRole="Base_O_A_Setup" ToRole="Base_UserInfo" />
+        </EntityType>
+        <EntityType Name="Base_Organization">
+          <Key>
+            <PropertyRef Name="Organization_ID" />
+          </Key>
+          <Property Name="Organization_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Organization_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_InnerPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_OuterPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_AssistantManager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Zipcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Organization_Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_StaffOrganize" Relationship="Self.FK_Base_StaffOrganize_Base_Organization" FromRole="Base_Organization" ToRole="Base_StaffOrganize" />
+        </EntityType>
+        <EntityType Name="Base_Recyclebin">
+          <Key>
+            <PropertyRef Name="Recyclebin_ID" />
+          </Key>
+          <Property Name="Recyclebin_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Recyclebin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recyclebin_Database" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recyclebin_Table" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recyclebin_FieldKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recyclebin_EventField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recyclebin_Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Base_RoleRight">
+          <Key>
+            <PropertyRef Name="RoleRight_ID" />
+          </Key>
+          <Property Name="RoleRight_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Roles_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_Roles" Relationship="Self.FK_Base_RoleRight_Base_Roles" FromRole="Base_RoleRight" ToRole="Base_Roles" />
+        </EntityType>
+        <EntityType Name="Base_Roles">
+          <Key>
+            <PropertyRef Name="Roles_ID" />
+          </Key>
+          <Property Name="Roles_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Roles_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role_Restriction" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Roles_Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AllowEdit" Type="Int32" />
+          <Property Name="AllowDelete" Type="Int32" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_RoleRight" Relationship="Self.FK_Base_RoleRight_Base_Roles" FromRole="Base_Roles" ToRole="Base_RoleRight" />
+          <NavigationProperty Name="Base_UserRole" Relationship="Self.FK_Base_UserRole_Base_Roles" FromRole="Base_Roles" ToRole="Base_UserRole" />
+        </EntityType>
+        <EntityType Name="Base_StaffOrganize">
+          <Key>
+            <PropertyRef Name="StaffOrganize_Id" />
+          </Key>
+          <Property Name="StaffOrganize_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Organization_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_Organization" Relationship="Self.FK_Base_StaffOrganize_Base_Organization" FromRole="Base_StaffOrganize" ToRole="Base_Organization" />
+          <NavigationProperty Name="Base_UserInfo" Relationship="Self.FK_Base_StaffOrganize_Base_UserInfo" FromRole="Base_StaffOrganize" ToRole="Base_UserInfo" />
+        </EntityType>
+        <EntityType Name="Base_SysMenu">
+          <Key>
+            <PropertyRef Name="Menu_Id" />
+          </Key>
+          <Property Name="Menu_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Type" Type="Int32" />
+          <Property Name="NavigateUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Target" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AllowEdit" Type="Int32" />
+          <Property Name="AllowDelete" Type="Int32" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Base_UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroup_ID" />
+          </Key>
+          <Property Name="UserGroup_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserGroup_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserGroup_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserGroup_Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AllowEdit" Type="Int32" />
+          <Property Name="AllowDelete" Type="Int32" />
+          <Property Name="SortCode" Type="Int32" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_UserGroupRight" Relationship="Self.FK_Base_UserGroupRight_Base_UserGroup" FromRole="Base_UserGroup" ToRole="Base_UserGroupRight" />
+          <NavigationProperty Name="Base_UserInfoUserGroup" Relationship="Self.FK_Base_UserInfoUserGroup_Base_UserGroup" FromRole="Base_UserGroup" ToRole="Base_UserInfoUserGroup" />
+        </EntityType>
+        <EntityType Name="Base_UserGroupRight">
+          <Key>
+            <PropertyRef Name="UserGroupRight_ID" />
+          </Key>
+          <Property Name="UserGroupRight_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserGroup_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_UserGroup" Relationship="Self.FK_Base_UserGroupRight_Base_UserGroup" FromRole="Base_UserGroupRight" ToRole="Base_UserGroup" />
+        </EntityType>
+        <EntityType Name="Base_UserInfo">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Sex" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Theme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Question" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnswerQuestion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteMark" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifyUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_O_A_Setup" Relationship="Self.FK_Base_O_A_Setup_Base_UserInfo" FromRole="Base_UserInfo" ToRole="Base_O_A_Setup" />
+          <NavigationProperty Name="Base_StaffOrganize" Relationship="Self.FK_Base_StaffOrganize_Base_UserInfo" FromRole="Base_UserInfo" ToRole="Base_StaffOrganize" />
+          <NavigationProperty Name="Base_UserInfoUserGroup" Relationship="Self.FK_Base_UserInfoUserGroup_Base_UserInfo" FromRole="Base_UserInfo" ToRole="Base_UserInfoUserGroup" />
+          <NavigationProperty Name="Base_UserRight" Relationship="Self.FK_Base_UserRight_Base_UserInfo" FromRole="Base_UserInfo" ToRole="Base_UserRight" />
+          <NavigationProperty Name="Base_UserRole" Relationship="Self.FK_Base_UserRole_Base_UserInfo" FromRole="Base_UserInfo" ToRole="Base_UserRole" />
+        </EntityType>
+        <EntityType Name="Base_UserInfoUserGroup">
+          <Key>
+            <PropertyRef Name="UserInfoUserGroup_ID" />
+          </Key>
+          <Property Name="UserInfoUserGroup_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserGroup_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_UserGroup" Relationship="Self.FK_Base_UserInfoUserGroup_Base_UserGroup" FromRole="Base_UserInfoUserGroup" ToRole="Base_UserGroup" />
+          <NavigationProperty Name="Base_UserInfo" Relationship="Self.FK_Base_UserInfoUserGroup_Base_UserInfo" FromRole="Base_UserInfoUserGroup" ToRole="Base_UserInfo" />
+        </EntityType>
+        <EntityType Name="Base_UserRight">
+          <Key>
+            <PropertyRef Name="UserRight_ID" />
+          </Key>
+          <Property Name="UserRight_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Menu_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_UserInfo" Relationship="Self.FK_Base_UserRight_Base_UserInfo" FromRole="Base_UserRight" ToRole="Base_UserInfo" />
+        </EntityType>
+        <EntityType Name="Base_UserRole">
+          <Key>
+            <PropertyRef Name="UserRole_ID" />
+          </Key>
+          <Property Name="UserRole_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Roles_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Base_Roles" Relationship="Self.FK_Base_UserRole_Base_Roles" FromRole="Base_UserRole" ToRole="Base_Roles" />
+          <NavigationProperty Name="Base_UserInfo" Relationship="Self.FK_Base_UserRole_Base_UserInfo" FromRole="Base_UserRole" ToRole="Base_UserInfo" />
+        </EntityType>
+        <Association Name="FK_Base_O_A_Setup_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_O_A_Setup" Type="Self.Base_O_A_Setup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_O_A_Setup">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_StaffOrganize_Base_Organization">
+          <End Role="Base_Organization" Type="Self.Base_Organization" Multiplicity="0..1" />
+          <End Role="Base_StaffOrganize" Type="Self.Base_StaffOrganize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Organization">
+              <PropertyRef Name="Organization_ID" />
+            </Principal>
+            <Dependent Role="Base_StaffOrganize">
+              <PropertyRef Name="Organization_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_RoleRight_Base_Roles">
+          <End Role="Base_Roles" Type="Self.Base_Roles" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_RoleRight" Type="Self.Base_RoleRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Roles">
+              <PropertyRef Name="Roles_ID" />
+            </Principal>
+            <Dependent Role="Base_RoleRight">
+              <PropertyRef Name="Roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRole_Base_Roles">
+          <End Role="Base_Roles" Type="Self.Base_Roles" Multiplicity="0..1" />
+          <End Role="Base_UserRole" Type="Self.Base_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Roles">
+              <PropertyRef Name="Roles_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRole">
+              <PropertyRef Name="Roles_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_StaffOrganize_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_StaffOrganize" Type="Self.Base_StaffOrganize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_StaffOrganize">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserGroupRight_Base_UserGroup">
+          <End Role="Base_UserGroup" Type="Self.Base_UserGroup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserGroupRight" Type="Self.Base_UserGroupRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Principal>
+            <Dependent Role="Base_UserGroupRight">
+              <PropertyRef Name="UserGroup_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserInfoUserGroup_Base_UserGroup">
+          <End Role="Base_UserGroup" Type="Self.Base_UserGroup" Multiplicity="0..1" />
+          <End Role="Base_UserInfoUserGroup" Type="Self.Base_UserInfoUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Principal>
+            <Dependent Role="Base_UserInfoUserGroup">
+              <PropertyRef Name="UserGroup_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserInfoUserGroup_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserInfoUserGroup" Type="Self.Base_UserInfoUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserInfoUserGroup">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRight_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserRight" Type="Self.Base_UserRight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRight">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Base_UserRole_Base_UserInfo">
+          <End Role="Base_UserInfo" Type="Self.Base_UserInfo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Base_UserRole" Type="Self.Base_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_UserInfo">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Base_UserRole">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RM_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Base_AppendProperty" EntityType="Self.Base_AppendProperty" />
+          <EntitySet Name="Base_AppendPropertyInstance" EntityType="Self.Base_AppendPropertyInstance" />
+          <EntitySet Name="Base_Button" EntityType="Self.Base_Button" />
+          <EntitySet Name="Base_O_A_Setup" EntityType="Self.Base_O_A_Setup" />
+          <EntitySet Name="Base_Organization" EntityType="Self.Base_Organization" />
+          <EntitySet Name="Base_Recyclebin" EntityType="Self.Base_Recyclebin" />
+          <EntitySet Name="Base_RoleRight" EntityType="Self.Base_RoleRight" />
+          <EntitySet Name="Base_Roles" EntityType="Self.Base_Roles" />
+          <EntitySet Name="Base_StaffOrganize" EntityType="Self.Base_StaffOrganize" />
+          <EntitySet Name="Base_SysMenu" EntityType="Self.Base_SysMenu" />
+          <EntitySet Name="Base_UserGroup" EntityType="Self.Base_UserGroup" />
+          <EntitySet Name="Base_UserGroupRight" EntityType="Self.Base_UserGroupRight" />
+          <EntitySet Name="Base_UserInfo" EntityType="Self.Base_UserInfo" />
+          <EntitySet Name="Base_UserInfoUserGroup" EntityType="Self.Base_UserInfoUserGroup" />
+          <EntitySet Name="Base_UserRight" EntityType="Self.Base_UserRight" />
+          <EntitySet Name="Base_UserRole" EntityType="Self.Base_UserRole" />
+          <AssociationSet Name="FK_Base_O_A_Setup_Base_UserInfo" Association="Self.FK_Base_O_A_Setup_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_O_A_Setup" EntitySet="Base_O_A_Setup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_StaffOrganize_Base_Organization" Association="Self.FK_Base_StaffOrganize_Base_Organization">
+            <End Role="Base_Organization" EntitySet="Base_Organization" />
+            <End Role="Base_StaffOrganize" EntitySet="Base_StaffOrganize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_RoleRight_Base_Roles" Association="Self.FK_Base_RoleRight_Base_Roles">
+            <End Role="Base_Roles" EntitySet="Base_Roles" />
+            <End Role="Base_RoleRight" EntitySet="Base_RoleRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRole_Base_Roles" Association="Self.FK_Base_UserRole_Base_Roles">
+            <End Role="Base_Roles" EntitySet="Base_Roles" />
+            <End Role="Base_UserRole" EntitySet="Base_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_StaffOrganize_Base_UserInfo" Association="Self.FK_Base_StaffOrganize_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_StaffOrganize" EntitySet="Base_StaffOrganize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserGroupRight_Base_UserGroup" Association="Self.FK_Base_UserGroupRight_Base_UserGroup">
+            <End Role="Base_UserGroup" EntitySet="Base_UserGroup" />
+            <End Role="Base_UserGroupRight" EntitySet="Base_UserGroupRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserInfoUserGroup_Base_UserGroup" Association="Self.FK_Base_UserInfoUserGroup_Base_UserGroup">
+            <End Role="Base_UserGroup" EntitySet="Base_UserGroup" />
+            <End Role="Base_UserInfoUserGroup" EntitySet="Base_UserInfoUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserInfoUserGroup_Base_UserInfo" Association="Self.FK_Base_UserInfoUserGroup_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserInfoUserGroup" EntitySet="Base_UserInfoUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRight_Base_UserInfo" Association="Self.FK_Base_UserRight_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserRight" EntitySet="Base_UserRight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Base_UserRole_Base_UserInfo" Association="Self.FK_Base_UserRole_Base_UserInfo">
+            <End Role="Base_UserInfo" EntitySet="Base_UserInfo" />
+            <End Role="Base_UserRole" EntitySet="Base_UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RoleManagementModelStoreContainer" CdmEntityContainer="RM_DBEntities">
+          <EntitySetMapping Name="Base_AppendProperty">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_AppendProperty">
+              <MappingFragment StoreEntitySet="Base_AppendProperty">
+                <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+                <ScalarProperty Name="Property_Function" ColumnName="Property_Function" />
+                <ScalarProperty Name="Property_FunctionUrl" ColumnName="Property_FunctionUrl" />
+                <ScalarProperty Name="Property_Control_ID" ColumnName="Property_Control_ID" />
+                <ScalarProperty Name="Property_Name" ColumnName="Property_Name" />
+                <ScalarProperty Name="Property_Control_Type" ColumnName="Property_Control_Type" />
+                <ScalarProperty Name="Property_Control_DataSource" ColumnName="Property_Control_DataSource" />
+                <ScalarProperty Name="Property_Control_Length" ColumnName="Property_Control_Length" />
+                <ScalarProperty Name="Property_Control_Maxlength" ColumnName="Property_Control_Maxlength" />
+                <ScalarProperty Name="Property_Control_Style" ColumnName="Property_Control_Style" />
+                <ScalarProperty Name="Property_Control_Validator" ColumnName="Property_Control_Validator" />
+                <ScalarProperty Name="Property_Colspan" ColumnName="Property_Colspan" />
+                <ScalarProperty Name="Property_Event" ColumnName="Property_Event" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_AppendPropertyInstance">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_AppendPropertyInstance">
+              <MappingFragment StoreEntitySet="Base_AppendPropertyInstance">
+                <ScalarProperty Name="PropertyInstance_ID" ColumnName="PropertyInstance_ID" />
+                <ScalarProperty Name="Property_Control_ID" ColumnName="Property_Control_ID" />
+                <ScalarProperty Name="PropertyInstance_Value" ColumnName="PropertyInstance_Value" />
+                <ScalarProperty Name="PropertyInstance_Key" ColumnName="PropertyInstance_Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_Button">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_Button">
+              <MappingFragment StoreEntitySet="Base_Button">
+                <ScalarProperty Name="Button_ID" ColumnName="Button_ID" />
+                <ScalarProperty Name="Button_Name" ColumnName="Button_Name" />
+                <ScalarProperty Name="Button_Title" ColumnName="Button_Title" />
+                <ScalarProperty Name="Button_Img" ColumnName="Button_Img" />
+                <ScalarProperty Name="Button_Code" ColumnName="Button_Code" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="Button_Type" ColumnName="Button_Type" />
+                <ScalarProperty Name="Button_Remak" ColumnName="Button_Remak" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_O_A_Setup">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_O_A_Setup">
+              <MappingFragment StoreEntitySet="Base_O_A_Setup">
+                <ScalarProperty Name="Setup_ID" ColumnName="Setup_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Setup_IName" ColumnName="Setup_IName" />
+                <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Setup_Img" ColumnName="Setup_Img" />
+                <ScalarProperty Name="Setup_Remak" ColumnName="Setup_Remak" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_Organization">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_Organization">
+              <MappingFragment StoreEntitySet="Base_Organization">
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="Organization_Code" ColumnName="Organization_Code" />
+                <ScalarProperty Name="Organization_Name" ColumnName="Organization_Name" />
+                <ScalarProperty Name="Organization_InnerPhone" ColumnName="Organization_InnerPhone" />
+                <ScalarProperty Name="Organization_OuterPhone" ColumnName="Organization_OuterPhone" />
+                <ScalarProperty Name="Organization_Manager" ColumnName="Organization_Manager" />
+                <ScalarProperty Name="Organization_AssistantManager" ColumnName="Organization_AssistantManager" />
+                <ScalarProperty Name="Organization_Fax" ColumnName="Organization_Fax" />
+                <ScalarProperty Name="Organization_Zipcode" ColumnName="Organization_Zipcode" />
+                <ScalarProperty Name="Organization_Address" ColumnName="Organization_Address" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Organization_Remark" ColumnName="Organization_Remark" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_Recyclebin">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_Recyclebin">
+              <MappingFragment StoreEntitySet="Base_Recyclebin">
+                <ScalarProperty Name="Recyclebin_ID" ColumnName="Recyclebin_ID" />
+                <ScalarProperty Name="Recyclebin_Name" ColumnName="Recyclebin_Name" />
+                <ScalarProperty Name="Recyclebin_Database" ColumnName="Recyclebin_Database" />
+                <ScalarProperty Name="Recyclebin_Table" ColumnName="Recyclebin_Table" />
+                <ScalarProperty Name="Recyclebin_FieldKey" ColumnName="Recyclebin_FieldKey" />
+                <ScalarProperty Name="Recyclebin_EventField" ColumnName="Recyclebin_EventField" />
+                <ScalarProperty Name="Recyclebin_Remark" ColumnName="Recyclebin_Remark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_RoleRight">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_RoleRight">
+              <MappingFragment StoreEntitySet="Base_RoleRight">
+                <ScalarProperty Name="RoleRight_ID" ColumnName="RoleRight_ID" />
+                <ScalarProperty Name="Roles_ID" ColumnName="Roles_ID" />
+                <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_Roles">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_Roles">
+              <MappingFragment StoreEntitySet="Base_Roles">
+                <ScalarProperty Name="Roles_ID" ColumnName="Roles_ID" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Roles_Name" ColumnName="Roles_Name" />
+                <ScalarProperty Name="Role_Restriction" ColumnName="Role_Restriction" />
+                <ScalarProperty Name="Roles_Remark" ColumnName="Roles_Remark" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_StaffOrganize">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_StaffOrganize">
+              <MappingFragment StoreEntitySet="Base_StaffOrganize">
+                <ScalarProperty Name="StaffOrganize_Id" ColumnName="StaffOrganize_Id" />
+                <ScalarProperty Name="Organization_ID" ColumnName="Organization_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_SysMenu">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_SysMenu">
+              <MappingFragment StoreEntitySet="Base_SysMenu">
+                <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+                <ScalarProperty Name="Menu_Title" ColumnName="Menu_Title" />
+                <ScalarProperty Name="Menu_Img" ColumnName="Menu_Img" />
+                <ScalarProperty Name="Menu_Type" ColumnName="Menu_Type" />
+                <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserGroup">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserGroup">
+              <MappingFragment StoreEntitySet="Base_UserGroup">
+                <ScalarProperty Name="UserGroup_ID" ColumnName="UserGroup_ID" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="UserGroup_Code" ColumnName="UserGroup_Code" />
+                <ScalarProperty Name="UserGroup_Name" ColumnName="UserGroup_Name" />
+                <ScalarProperty Name="UserGroup_Remark" ColumnName="UserGroup_Remark" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserGroupRight">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserGroupRight">
+              <MappingFragment StoreEntitySet="Base_UserGroupRight">
+                <ScalarProperty Name="UserGroupRight_ID" ColumnName="UserGroupRight_ID" />
+                <ScalarProperty Name="UserGroup_ID" ColumnName="UserGroup_ID" />
+                <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserInfo">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserInfo">
+              <MappingFragment StoreEntitySet="Base_UserInfo">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_Code" ColumnName="User_Code" />
+                <ScalarProperty Name="User_Account" ColumnName="User_Account" />
+                <ScalarProperty Name="User_Pwd" ColumnName="User_Pwd" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Sex" ColumnName="User_Sex" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="AnswerQuestion" ColumnName="AnswerQuestion" />
+                <ScalarProperty Name="DeleteMark" ColumnName="DeleteMark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyUserId" ColumnName="ModifyUserId" />
+                <ScalarProperty Name="ModifyUserName" ColumnName="ModifyUserName" />
+                <ScalarProperty Name="User_Remark" ColumnName="User_Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserInfoUserGroup">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserInfoUserGroup">
+              <MappingFragment StoreEntitySet="Base_UserInfoUserGroup">
+                <ScalarProperty Name="UserInfoUserGroup_ID" ColumnName="UserInfoUserGroup_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="UserGroup_ID" ColumnName="UserGroup_ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserRight">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserRight">
+              <MappingFragment StoreEntitySet="Base_UserRight">
+                <ScalarProperty Name="UserRight_ID" ColumnName="UserRight_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_UserRole">
+            <EntityTypeMapping TypeName="RoleManagementModel.Base_UserRole">
+              <MappingFragment StoreEntitySet="Base_UserRole">
+                <ScalarProperty Name="UserRole_ID" ColumnName="UserRole_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Roles_ID" ColumnName="Roles_ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
