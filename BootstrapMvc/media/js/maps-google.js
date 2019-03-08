@@ -6,7 +6,7 @@ var MapsGoogle = function () {
             lat: -12.043333,
             lng: -77.028333
         });
-    }
+    };
 
     var mapMarker = function () {
         var map = new GMaps({
@@ -35,7 +35,7 @@ var MapsGoogle = function () {
                 content: '<span style="color:#000">HTML Content!</span>'
             }
         });
-    }
+    };
 
     var mapPolylines = function () {
         var map = new GMaps({
@@ -64,7 +64,7 @@ var MapsGoogle = function () {
             strokeOpacity: 0.6,
             strokeWeight: 6
         });
-    }
+    };
 
     var mapGeolocation = function () {
 
@@ -88,7 +88,7 @@ var MapsGoogle = function () {
                 //alert("Geolocation Done!");
             }
         });
-    }
+    };
 
     var mapGeocoding = function () {
 
@@ -129,7 +129,7 @@ var MapsGoogle = function () {
             }
         });
 
-    }
+    };
 
     var mapPolygone = function () {
         var map = new GMaps({
@@ -183,7 +183,7 @@ var MapsGoogle = function () {
                 }
             });
         });
-    }
+    };
 
     return {
         //main function to initiate map samples
