@@ -1,4 +1,4 @@
-var Login = function () {
+ï»¿var Login = function () {
 
     return {
         //main function to initiate the module
@@ -22,7 +22,10 @@ var Login = function () {
 
                 messages: {
                     username: {
-                        required: "´íÎó"
+                        required: "è¯·è¾“å…¥ç™»å½•å"
+                    },
+                    password: {
+                        required: "è¯·è¾“å…¥å¯†ç "
                     }
                 },
 
@@ -50,7 +53,7 @@ var Login = function () {
             });
 
             $('.login-form input').keypress(function (e) {
-                if (e.which == 13) {
+                if (e.which == 13) {//eslint-disable-line
                     if ($('.login-form').validate().form()) {
                         window.location.href = "index.html";
                     }
@@ -72,7 +75,7 @@ var Login = function () {
 
                 messages: {
                     email: {
-                        required: "ÇëÊäÈëEmail"
+                        required: "è¯·è¾“å…¥Email"
                     }
                 },
 
@@ -100,7 +103,7 @@ var Login = function () {
             });
 
             $('.forget-form input').keypress(function (e) {
-                if (e.which == 13) {
+                if (e.which == 13) {//eslint-disable-line
                     if ($('.forget-form').validate().form()) {
                         window.location.href = "index.html";
                     }
@@ -163,7 +166,8 @@ var Login = function () {
                 },
 
                 errorPlacement: function (error, element) {
-                    if (element.attr("name") == "tnc") { // insert checkbox errors after the container                  
+                    if (element.attr("name") == "tnc") { //eslint-disable-line
+                        // insert checkbox errors after the container
                         error.addClass('help-small no-left-padding').insertAfter($('#register_tnc_error'));
                     } else {
                         error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
