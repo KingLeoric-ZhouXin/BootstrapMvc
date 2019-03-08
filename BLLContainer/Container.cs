@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Autofac;
+using BLL;
+using IBLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Autofac;
-using DAL;
-using IDAL;
-using Model;
 
-namespace DALContainer
+namespace BLLContainer
 {
     public class Container
     {
@@ -38,13 +37,14 @@ namespace DALContainer
 
             return container.Resolve<T>();
         }
+
         /// <summary>
         /// 初始化
         /// </summary>
         public static void Initialise()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<UserInfoDAL>().As<IUserInfoDAL>().InstancePerLifetimeScope();
+            builder.RegisterType<UserInfoService>().As<IUserInfoService>().InstancePerLifetimeScope();
             container = builder.Build();
         }
     }

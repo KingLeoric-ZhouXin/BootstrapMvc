@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
-namespace BLLContainer
+namespace IBLL
 {
-    public class Class1
+    public interface IUserInfoService : IBaseService<Base_UserInfo>
     {
     }
 }

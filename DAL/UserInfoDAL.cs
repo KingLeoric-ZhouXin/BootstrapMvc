@@ -8,7 +8,7 @@ using Model;
 
 namespace DAL
 {
-    public class UserInfoDAL : BaseDAL<Base_UserInfo>, IUserInfo
+    public class UserInfoDAL : BaseDAL<Base_UserInfo>, IUserInfoDAL
     {
     }
 }
