@@ -8,6 +8,12 @@ namespace BootstrapMvc.Controllers
 {
     public class LoginController : Controller
     {
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Login
         public ActionResult Login()
         {

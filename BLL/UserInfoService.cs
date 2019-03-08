@@ -1,13 +1,8 @@
-﻿using DAL;
-using IBLL;
+﻿using IBLL;
 using IDAL;
 using Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DALContainer;
+using Utils;
 
 namespace BLL
 {
@@ -15,6 +10,13 @@ namespace BLL
     {
 
         private IUserInfoDAL UserInfoDAL = Container.Resolve<IUserInfoDAL>();
+
+        public Base_UserInfo Login(string userName, string password)
+        {
+            string strMD5 = EncyptHelper.MD5(password);
+            var model = Dal.GetModel(s => s.User_Account == userName && s.User_Pwd == strMD5);
+            return model;
+        }
 
         public override void SetDal()
         {
