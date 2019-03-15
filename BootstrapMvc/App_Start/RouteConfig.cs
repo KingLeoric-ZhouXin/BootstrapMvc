@@ -19,7 +19,7 @@ namespace BootstrapMvc
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );*/
             routes.MapRoute(
-               name: "MyIndex",
+               name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
            );
