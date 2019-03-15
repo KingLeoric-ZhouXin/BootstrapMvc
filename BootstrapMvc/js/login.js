@@ -29,13 +29,8 @@
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
-                    $('.alert-error', $('.login-form')).show();
-                },
-
                 highlight: function (element) { // hightlight error inputs
-                    $(element)
-                        .closest('.control-group').addClass('error'); // set error class to the control group
+                    $(element).closest('.control-group').addClass('error'); // set error class to the control group
                 },
 
                 success: function (label) {
@@ -45,19 +40,6 @@
 
                 errorPlacement: function (error, element) {
                     error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
-                },
-
-                submitHandler: function (form) {
-                    window.location.href = "index.html";
-                }
-            });
-
-            $('.login-form input').keypress(function (e) {
-                if (e.which == 13) {//eslint-disable-line
-                    if ($('.login-form').validate().form()) {
-                        window.location.href = "index.html";
-                    }
-                    return false;
                 }
             });
 
@@ -79,13 +61,8 @@
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
-
-                },
-
                 highlight: function (element) { // hightlight error inputs
-                    $(element)
-                        .closest('.control-group').addClass('error'); // set error class to the control group
+                    $(element).closest('.control-group').addClass('error'); // set error class to the control group
                 },
 
                 success: function (label) {
@@ -95,19 +72,6 @@
 
                 errorPlacement: function (error, element) {
                     error.addClass('help-small no-left-padding').insertAfter(element.closest('.input-icon'));
-                },
-
-                submitHandler: function (form) {
-                    window.location.href = "index.html";
-                }
-            });
-
-            $('.forget-form input').keypress(function (e) {
-                if (e.which == 13) {//eslint-disable-line
-                    if ($('.forget-form').validate().form()) {
-                        window.location.href = "index.html";
-                    }
-                    return false;
                 }
             });
 
@@ -139,15 +103,21 @@
                     email: {
                         required: true,
                         email: true
-                    },
-                    tnc: {
-                        required: true
                     }
                 },
 
                 messages: { // custom messages for radio buttons and checkboxes
-                    tnc: {
-                        required: "Please accept TNC first."
+                    username: {
+                        required: "请输入登录名"
+                    },
+                    password: {
+                        required: "请输入密码"
+                    },
+                    rpassword: {
+                        equalTo: "和密码不同"
+                    },
+                    email: {
+                        required: "请输入电子游戏"
                     }
                 },
 
@@ -193,3 +163,57 @@
     };
 
 }();
+
+var Sub = function () {
+    return {
+        init: function () {
+
+            //登录
+            $('#subLogin').click(function () {
+                var json = {
+                    username: encodeURI($('.login-form [name="username"]').val()),
+                    password: encodeURI($('.login-form [name="password"]').val())
+                };
+                submit("login", "GET", json, '.login-form');
+            });
+
+            //查找密码
+            $('#subFindPwd').click(function () {
+             
+                submit("login", "GET", '', '.forget-form');
+            });
+
+            //注册
+            $('#subRegister').click(function () {
+                submit("login", "GET", '', '.register-form');
+            });
+        }
+    };
+}();
+
+function submit(action, method, json, from) {
+    var thisfrom = $(from);
+    if (thisfrom.valid()) {
+        $.ajax({
+            url: "../api/login/" + action,
+            type: method,
+            data: json,
+            dataType: "json",
+            success: function (data, textStatus) {
+                if (data.success) {
+                    alert(data.msg);
+                } else {
+                    alertMessage(data.msg);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+        });
+    }
+}
+
+function alertMessage(message) {
+    $('#alertMessage').text(message);
+    $('#alertModal').modal('show');
+}

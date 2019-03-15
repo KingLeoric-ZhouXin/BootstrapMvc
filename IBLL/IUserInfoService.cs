@@ -9,5 +9,6 @@ namespace IBLL
 {
     public interface IUserInfoService : IBaseService<Base_UserInfo>
     {
+        ResponseModel<string> Login(string userName, string password);
     }
 }

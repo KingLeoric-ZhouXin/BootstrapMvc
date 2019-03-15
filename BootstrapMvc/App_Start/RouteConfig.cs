@@ -21,7 +21,7 @@ namespace BootstrapMvc
             routes.MapRoute(
                name: "MyIndex",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
+               defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
            );
         }
     }
