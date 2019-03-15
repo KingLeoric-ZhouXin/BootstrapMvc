@@ -555,7 +555,7 @@
       <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilitys\Utilitys.csproj">
-      <Project>{8AF1B4EE-909E-489C-B635-B7FF38069F21}</Project>
+      <Project>{8af1b4ee-909e-489c-b635-b7ff38069f21}</Project>
       <Name>Utilitys</Name>
     </ProjectReference>
   </ItemGroup>
