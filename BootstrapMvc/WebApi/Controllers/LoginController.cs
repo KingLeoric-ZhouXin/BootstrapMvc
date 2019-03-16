@@ -15,6 +15,7 @@ namespace BootstrapMvc.UI.WebApi.Controllers
     public class LoginController : ApiController
     {
         private IUserInfoService UserInfoService = BLLContainer.Container.Resolve<IUserInfoService>();
+        private IUserTokenService UserTokenService = BLLContainer.Container.Resolve<IUserTokenService>();
 
         [Route("login")]
         [HttpGet]

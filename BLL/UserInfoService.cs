@@ -13,7 +13,7 @@ namespace BLL
     {
 
         private IUserInfoDAL UserInfoDAL = Container.Resolve<IUserInfoDAL>();
-        private IUserTokenService UserTokenService = Container.Resolve<IUserTokenService>();
+     
 
         public override void SetDal()
         {
@@ -38,12 +38,12 @@ namespace BLL
             if (model != null)
             {
 
-                var token = UserTokenService.GetModel(p => p.User_ID == model.User_ID);
+                /*var token = UserTokenService.GetModel(p => p.User_ID == model.User_ID);
 
                 if (token != null)
                 {
 
-                }
+                }*/
 
                 response.success = true;
                 response.msg = "登录成功";
