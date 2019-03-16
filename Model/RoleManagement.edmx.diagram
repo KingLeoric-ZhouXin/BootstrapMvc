@@ -31,6 +31,9 @@
         <AssociationConnector Association="RoleManagementModel.FK_Base_UserInfoUserGroup_Base_UserInfo" ManuallyRouted="false" />
         <AssociationConnector Association="RoleManagementModel.FK_Base_UserRight_Base_UserInfo" ManuallyRouted="false" />
         <AssociationConnector Association="RoleManagementModel.FK_Base_UserRole_Base_UserInfo" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RoleManagementModel.Base_UserToken" Width="1.5" PointX="11.375" PointY="6.75" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserInfo_Base_UserInfo" />
+        <AssociationConnector Association="RoleManagementModel.FK_Base_UserToken_Base_UserInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

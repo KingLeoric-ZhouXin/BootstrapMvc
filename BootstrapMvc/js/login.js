@@ -179,7 +179,7 @@ var Sub = function () {
 
             //查找密码
             $('#subFindPwd').click(function () {
-             
+
                 submit("login", "GET", '', '.forget-form');
             });
 
@@ -206,8 +206,18 @@ function submit(action, method, json, from) {
                     alertMessage(data.msg);
                 }
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
 
+            beforeSend: function (XMLHttpRequest) {
+                //XMLHttpRequest.setRequestHeader("Authorization", "Token ");
+            },
+
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                if (XMLHttpRequest.responseJSON) {
+                    alertMessage(XMLHttpRequest.responseJSON.msg);
+                }
+                else {
+                    alertMessage(errorThrown);
+                }
             }
         });
     }

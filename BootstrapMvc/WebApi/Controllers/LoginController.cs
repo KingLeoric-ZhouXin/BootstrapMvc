@@ -18,6 +18,7 @@ namespace BootstrapMvc.UI.WebApi.Controllers
 
         [Route("login")]
         [HttpGet]
+        [AllowAnonymous]
         public HttpResponseMessage GetLogin(string username, string password)
         {
             ResponseModel<string> responseModel = UserInfoService.Login(EncyptHelper.StringDecode(username), EncyptHelper.StringDecode(password));

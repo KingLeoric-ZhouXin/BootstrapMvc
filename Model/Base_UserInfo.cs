@@ -22,6 +22,7 @@ namespace Model
             this.Base_UserInfoUserGroup = new HashSet<Base_UserInfoUserGroup>();
             this.Base_UserRight = new HashSet<Base_UserRight>();
             this.Base_UserRole = new HashSet<Base_UserRole>();
+            this.Base_UserToken = new HashSet<Base_UserToken>();
         }
     
         public string User_ID { get; set; }
@@ -54,5 +55,9 @@ namespace Model
         public virtual ICollection<Base_UserRight> Base_UserRight { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Base_UserRole> Base_UserRole { get; set; }
+        public virtual Base_UserInfo Base_UserInfo1 { get; set; }
+        public virtual Base_UserInfo Base_UserInfo2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Base_UserToken> Base_UserToken { get; set; }
     }
 }

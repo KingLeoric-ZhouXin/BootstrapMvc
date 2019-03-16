@@ -31,7 +31,6 @@ namespace BLL
 
             ResponseModel<string> response = new ResponseModel<string>();
 
-
             if (model != null)
             {
                 response.success = true;

@@ -41,5 +41,6 @@ namespace Model
         public virtual DbSet<Base_UserInfoUserGroup> Base_UserInfoUserGroup { get; set; }
         public virtual DbSet<Base_UserRight> Base_UserRight { get; set; }
         public virtual DbSet<Base_UserRole> Base_UserRole { get; set; }
+        public virtual DbSet<Base_UserToken> Base_UserToken { get; set; }
     }
 }
