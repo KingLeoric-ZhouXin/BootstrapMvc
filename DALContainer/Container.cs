@@ -45,6 +45,7 @@ namespace DALContainer
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<UserInfoDAL>().As<IUserInfoDAL>().InstancePerLifetimeScope();
+            builder.RegisterType<UserTokenDAL>().As<IUserTokenDAL>().InstancePerLifetimeScope();
             container = builder.Build();
         }
     }

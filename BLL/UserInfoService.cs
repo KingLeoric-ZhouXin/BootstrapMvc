@@ -3,6 +3,9 @@ using IDAL;
 using Model;
 using DALContainer;
 using Utils;
+using System;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace BLL
 {
@@ -10,6 +13,7 @@ namespace BLL
     {
 
         private IUserInfoDAL UserInfoDAL = Container.Resolve<IUserInfoDAL>();
+        private IUserTokenService UserTokenService = Container.Resolve<IUserTokenService>();
 
         public override void SetDal()
         {
@@ -33,6 +37,14 @@ namespace BLL
 
             if (model != null)
             {
+
+                var token = UserTokenService.GetModel(p => p.User_ID == model.User_ID);
+
+                if (token != null)
+                {
+
+                }
+
                 response.success = true;
                 response.msg = "登录成功";
                 response.data = "{}";
@@ -45,6 +57,11 @@ namespace BLL
                 response.data = "{}";
                 return response;
             }
+        }
+
+        public new IQueryable<Base_UserInfo> GetModels<type>(Expression<Func<Base_UserInfo, bool>> whereLambda)
+        {
+            throw new NotImplementedException();
         }
     }
 }

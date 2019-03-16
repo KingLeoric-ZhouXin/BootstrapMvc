@@ -45,6 +45,7 @@ namespace BLLContainer
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<UserInfoService>().As<IUserInfoService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserTokenService>().As<IUserTokenService>().InstancePerLifetimeScope();
             container = builder.Build();
         }
     }
