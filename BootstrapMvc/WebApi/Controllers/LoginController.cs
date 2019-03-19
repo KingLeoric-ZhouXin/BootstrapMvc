@@ -1,5 +1,5 @@
-﻿using BootstrapMvc.UI.Common;
-using IBLL;
+﻿using BLL;
+using BootstrapMvc.UI.Common;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -14,15 +14,14 @@ namespace BootstrapMvc.UI.WebApi.Controllers
     [RoutePrefix("api/login")]
     public class LoginController : ApiController
     {
-        private IUserInfoService UserInfoService = BLLContainer.Container.Resolve<IUserInfoService>();
-        private IUserTokenService UserTokenService = BLLContainer.Container.Resolve<IUserTokenService>();
+        private UserInfoService service = new UserInfoService();
 
         [Route("login")]
         [HttpGet]
         [AllowAnonymous]
         public HttpResponseMessage GetLogin(string username, string password)
         {
-            ResponseModel<string> responseModel = UserInfoService.Login(EncyptHelper.StringDecode(username), EncyptHelper.StringDecode(password));
+            ResponseModel<string> responseModel = service.Login(EncyptHelper.StringDecode(username), EncyptHelper.StringDecode(password));
             return HttpResponseCreator.CreateResponse(Request, responseModel);
         }
 

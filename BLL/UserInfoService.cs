@@ -1,24 +1,17 @@
-﻿using IBLL;
-using IDAL;
+﻿using IDAL;
 using Model;
-using DALContainer;
 using Utils;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
+using DAL;
 
 namespace BLL
 {
-    public class UserInfoService : BaseService<Base_UserInfo>, IUserInfoService
+    public class UserInfoService
     {
-
-        private IUserInfoDAL UserInfoDAL = Container.Resolve<IUserInfoDAL>();
-     
-
-        public override void SetDal()
-        {
-            Dal = UserInfoDAL;
-        }
+        private IUserInfoDAL dal = new UserInfoDAL();
+        private IUserTokenDAL tokenDal = new UserTokenDAL();
 
         /// <summary>
         /// 用户登录
@@ -31,19 +24,31 @@ namespace BLL
 
             string md5Pwd = EncyptHelper.MD5(password);
 
-            var model = this.GetModel(q => q.User_Account == userName && q.User_Pwd == md5Pwd);
+            var model = dal.GetModel(q => q.User_Account == userName && q.User_Pwd == md5Pwd);
 
             ResponseModel<string> response = new ResponseModel<string>();
 
             if (model != null)
             {
 
-                /*var token = UserTokenService.GetModel(p => p.User_ID == model.User_ID);
+                var token = tokenDal.GetModel(p => p.User_ID == model.User_ID);
 
                 if (token != null)
                 {
+                    token.OverdueDate = DateTime.Now.AddHours(2);
+                    tokenDal.Update(token);
 
-                }*/
+                    if (tokenDal.SaveChanges())
+                    {
+
+                    }
+                }
+                else
+                {
+                    token.OverdueDate = DateTime.Now.AddHours(2);
+                    //token.Token
+                    tokenDal.Update(token);
+                }
 
                 response.success = true;
                 response.msg = "登录成功";
@@ -57,11 +62,6 @@ namespace BLL
                 response.data = "{}";
                 return response;
             }
-        }
-
-        public new IQueryable<Base_UserInfo> GetModels<type>(Expression<Func<Base_UserInfo, bool>> whereLambda)
-        {
-            throw new NotImplementedException();
         }
     }
 }

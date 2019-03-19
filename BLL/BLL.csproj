@@ -41,23 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserTokenService.cs" />
     <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DALContainer\DALContainer.csproj">
-      <Project>{84f02db4-c30a-4c7f-b707-9d9e8c315d68}</Project>
-      <Name>DALContainer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{8BB8A817-947B-48AA-86EF-10D509646413}</Project>
       <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IBLL\IBLL.csproj">
-      <Project>{feea33e6-a9cb-46b5-8e08-65ff1791c088}</Project>
-      <Name>IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{05d07d6f-4008-4c79-9bcf-077892531e13}</Project>
